@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    container_name: ehalal-db
+    restart: always
+    ports:
+      - 5433:5432
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/
+
+volumes:
+  postgres:
+    name: ehalal-db
